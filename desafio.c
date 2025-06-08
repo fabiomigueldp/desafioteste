@@ -40,7 +40,20 @@ int main(void)
 
     /* --- 3. Lê K (tamanho da chave) e depois a própria chave --- */
     if (scanf("%d", &K) != 1 || K <= 0 || K > MAX_K) return 0;
-    scanf("%s", chave);
+    getchar();                     /* consome '\n' após o número  */
+    int k_idx = 0;
+    while (k_idx < K) {
+        int ch_k = getchar();
+        if (ch_k == EOF) {
+            // Handle error: Unexpected EOF while reading key
+            // For now, assume valid input as per problem statement
+            break;
+        }
+        if (ch_k != ' ' && ch_k != '\n' && ch_k != '\r' && ch_k != '\t') {
+            chave[k_idx++] = (char)ch_k;
+        }
+    }
+    chave[k_idx] = '\0'; // Null-terminate the key
 
     /* --- 4. Preenche a tabela linha a linha --- */
     int linhas = (N + K - 1) / K;      /* arredonda para cima       */
