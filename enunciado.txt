@@ -1,0 +1,57 @@
+DESCRIÇÃO
+
+Vanderlei adora formas de codificar mensagens e criou um novo método para se comunicar com seu amigo Icaro. A codificação funciona da seguinte maneira:
+
+A codificação do texto é determinada por uma chave, que possui K caracteres, todos diferentes;
+O texto é então dividido em linhas que armazenam K caracteres, ignorando espaços;
+Caso umas das linhas não esteja completa, ela é preenchida com a letra x; e
+O texto passa a ser lido de cima para baixo por coluna, onde a ordem das colunas é determinada pela chave, em ordem alfabética.
+Por exemplo, se a chave for ZEBRAS, e a mensagem for VAMOS EMBORA FOMOS DESCOBERTOS, o texto seria codificado da seguinte maneira:
+
+Z E B R A S
+
+V A M O S E
+
+M B O R A F
+
+O M O S D E
+
+S C O B E R
+
+T O S x x x
+
+A mensagem codificada seria a seguinte:
+SADEx MOOOS ABMCO ORSBx EFERx VMOST
+
+Observe que foi lida primeiro a coluna de letra A, depois B, E, R, S e por último Z (ordem alfabética das letras da chave ZEBRAS).
+
+Como Vanderlei quer automatizar esse processo de codificação, ele pediu para que você fizesse o serviço.
+
+ 
+
+ENTRADA
+
+Seu programa deverá receber inicialmente um número N
+, com 0<N<10.000
+, que representa a quantidade de caracteres da mensagem (ignorando espaços). Em seguida, a mensagem que deverá ser codificada é informada. Por fim, o seu programa deverá receber um outro número M
+, com 0<M<27
+, que representa a quantidade de caracteres da chave e, na sequência, receber a chave.
+
+ 
+
+SAÍDA
+
+Seu programa deverá imprimir a mensagem codificada, sem espaços.
+
+ 
+
+EXEMPLOS DE E/S
+
+(os comentários entre parênteses não deverão ser exibidos):
+
+Entrada    Saída
+38 (Quantidade de caracteres da mensagem)
+eu cheguei ao fundo do poco e a vida me deu uma pa (Mensagem)
+4 (Quantidade de caracteres da chave)
+vida (Chave)
+hefooaaeaxcuodpeddmxuganooieuaeeiudcvmup
