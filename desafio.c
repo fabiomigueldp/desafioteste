@@ -40,7 +40,19 @@ int main(void)
 
     /* --- 3. Lê K (tamanho da chave) e depois a própria chave --- */
     if (scanf("%d", &K) != 1 || K <= 0 || K > MAX_K) return 0;
-    scanf("%s", chave);
+    getchar();                     /* consome '\n' após o número  */
+
+    /* A chave pode ter espaços entre os caracteres. Assim como a
+       mensagem, capturamos exatamente K letras, ignorando
+       qualquer caractere de espa\xE7o ou quebra de linha. */
+    int lidos_chave = 0;
+    while (lidos_chave < K) {
+        int ch = getchar();
+        if (ch == EOF) break;
+        if (ch == ' ' || ch == '\n' || ch == '\r' || ch == '\t') continue;
+        chave[lidos_chave++] = (char)ch;
+    }
+    chave[lidos_chave] = '\0';
 
     /* --- 4. Preenche a tabela linha a linha --- */
     int linhas = (N + K - 1) / K;      /* arredonda para cima       */
